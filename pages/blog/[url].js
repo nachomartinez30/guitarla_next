@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Layout from "../../components/Layout";
 import { formatDate } from "../../helpers";
-import styles from '../../styles/Entrada.module.css'
+import styles from '../../styles/Entrada.module.css';
 
 const EntradaBlog = ({ data }) => {
     const {
@@ -9,7 +9,7 @@ const EntradaBlog = ({ data }) => {
         imagen,
         published_at,
         contenido
-    } = data;
+    } = data[0];
     return (
         <Layout pagina={titulo}>
 
@@ -44,7 +44,7 @@ export async function getStaticPaths() {
     const entradas = await respuesta.json();
     const paths = entradas.map(entrada => ({
         /* necesita ser string */
-        params: { id: entrada.id + '' }
+        params: { url: entrada.url }
     }))
 
 
@@ -55,8 +55,8 @@ export async function getStaticPaths() {
     }
 }
 
-export async function getStaticProps({ params: { id } }) {
-    const respuesta = await fetch(`${process.env.API_URL}/blogs/${id}`)
+export async function getStaticProps({ params: { url } }) {
+    const respuesta = await fetch(`${process.env.API_URL}/blogs?url=${url}`)
     const resultado = await respuesta.json();
 
     return ({

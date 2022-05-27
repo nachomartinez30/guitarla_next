@@ -1,0 +1,7 @@
+.noEncontrado{
+    height: 60rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
