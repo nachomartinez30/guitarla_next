@@ -9,12 +9,15 @@ const Header = () => {
                 <div className={styles.barra}>
                     {/* LOGO */}
                     <Link href='/'>
-                        <Image
-                            width={400}
-                            height={100}
-                            src="/img/logo.svg"
-                            alt="Logo"
-                        />
+                        {/* arregla error */}
+                        <a>
+                            <Image
+                                width={400}
+                                height={100}
+                                src="/img/logo.svg"
+                                alt="Logo"
+                            />
+                        </a>
                     </Link>
                     {/* Navbar */}
                     <nav className={styles.navegacion}>
