@@ -20,7 +20,7 @@ const Blog = ({ posts }) => {
 }
 
 export async function getStaticProps() {
-    const api_url = 'http://localhost:1337/blogs';
+    const api_url = `${process.env.API_URL}/blogs`;
     const respuesta = await fetch(api_url);
     const posts = await respuesta.json()
 
