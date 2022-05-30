@@ -7,7 +7,7 @@ import ListadoBlogs from '../components/ListadoBlogs'
 export default function Home({ guitarras, cursos, posts }) {
   return (
     <Layout
-      destacado={guitarras[0]}
+      destacado={guitarras[1]}
     >
       <main className='contenedor'>
         <h1 className='heading'>Nuestra colección</h1>

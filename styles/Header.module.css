@@ -8,6 +8,7 @@
   background-size: cover;
   background-position: 50%;
   padding: 5rem 0;
+  position: relative;
 }
 
 .barra {
@@ -26,6 +27,8 @@
   margin-top: 5rem;
   display: flex;
   gap: 2rem;
+  position: relative;
+  z-index: 1;
 }
 @media (min-width: 768px) {
   .navegacion {
@@ -53,7 +56,7 @@
   text-align: center;
 }
 @media (min-width: 768px) {
-  .modelo{
+  .modelo {
     text-align: left;
     width: 50%;
   }
@@ -69,8 +72,8 @@
   margin: 0;
 }
 
-.descripcion{
-   /* permite esconder mostrar hasta 4 lineas en vertical */
+.descripcion {
+  /* permite esconder mostrar hasta 4 lineas en vertical */
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 4;
@@ -93,4 +96,35 @@
 .enlace:hover {
   background-color: var(--primary);
   color: var(--blanco);
+}
+
+.destacadoImg {
+  display: none;
+}
+@media (min-width: 992px) {
+  .destacadoImg {
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: -8px;
+    /* Animaciones */
+    animation-name: mostrarImgDestacado;
+    animation-duration: 1s;
+    animation-delay: 0s;
+    animation-timing-function: ease-in-out;
+  }
+}
+
+@keyframes mostrarImgDestacado {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0rem);
+  }
 }
