@@ -2,7 +2,7 @@ import Head from "next/head";
 import Footer from "./Footer";
 import Header from "./Header";
 
-const Layout = ({ children, pagina = '' }) => {
+const Layout = ({ children, pagina = '', destacado = null }) => {
     return (
         <div>
             <Head>
@@ -23,7 +23,7 @@ const Layout = ({ children, pagina = '' }) => {
 
             </Head>
 
-            <Header />
+            <Header destacado={destacado} />
             {children}
             <Footer />
         </div>

@@ -4,17 +4,14 @@ import styles from '../styles/Blog.module.css'
 
 const Blog = ({ posts }) => {
 
-    console.log(posts);
     return (
         <Layout pagina='Blog'>
-            <h1>
-                <main className='contenedor'>
-                    <h2 className='heading'>Blog</h2>
-                    <div className={styles.blog}>
-                        {posts.map(post => <Entrada key={post.id} data={post} />)}
-                    </div>
-                </main>
-            </h1>
+            <main className='contenedor'>
+                <h2 className='heading'>Blog</h2>
+                <div className={styles.blog}>
+                    {posts.map(post => <Entrada key={post.id} data={post} />)}
+                </div>
+            </main>
         </Layout>
     );
 }
